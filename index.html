@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platzi Fake API App</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <h1>Bienvenido a Platzi Store</h1>
+  </div>
+
+  <!-- Navegación principal -->
+  <header>
+    <nav>
+      <ul class="tabs">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#favoritos">Favoritos</a></li>
+        <li><a href="#buscar">Buscar</a></li>
+        <li><a href="#registro">Registro</a></li>
+        <li><a href="#extra">Extra</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Buscador -->
+  <section id="buscar">
+    <input type="text" id="searchInput" placeholder="Buscar producto..." />
+    <button onclick="buscarProducto()">Buscar</button>
+  </section>
+
+  <!-- Filtro -->
+  <section id="filtro">
+    <label for="categoria">Filtrar por categoría:</label>
+    <select id="categoria" onchange="filtrarProductos()">
+      <option value="all">Todos</option>
+      <option value="clothes">Ropa</option>
+      <option value="electronics">Electrónica</option>
+    </select>
+  </section>
+
+  <!-- Listado de Productos -->
+  <main id="productos"></main>
+
+  <!-- Formulario de Registro -->
+  <section id="registro">
+    <h2>Registro de Usuario</h2>
+    <form id="registroForm">
+      <input type="text" placeholder="Nombre" required />
+      <input type="text" placeholder="Apellido" required />
+      <input type="email" placeholder="Correo Electrónico" required />
+      <input type="password" placeholder="Contraseña" required />
+      <input type="tel" placeholder="Teléfono" required />
+      <input type="text" placeholder="Dirección" required />
+      <input type="date" placeholder="Fecha de nacimiento" required />
+      <button type="submit">Registrarse</button>
+    </form>
+  </section>
+
+  <!-- CRUD Favoritos -->
+  <section id="favoritos">
+    <h2>Favoritos</h2>
+    <div id="listaFavoritos"></div>
+  </section>
+
+  <!-- Funcionalidad Original -->
+  <section id="extra">
+    <h2>Recomendación del Día</h2>
+    <div id="recomendacion"></div>
+  </section>
+
+  <!-- Menú Inferior -->
+  <footer>
+    <nav class="menu-inferior">
+      <a href="#home">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#favoritos">Favoritos</a>
+      <a href="#registro">Registro</a>
+    </nav>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
