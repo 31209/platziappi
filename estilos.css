@@ -1,62 +1,84 @@
-/* Estilos básicos para diseño homogéneo */
+/* Estilos generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2;
+  background-color: #fdfdfd;
+  color: #212121;
 }
 
+/* Header y Footer */
 header,
 footer {
-  background-color: #282c34;
+  background-color: #00695c;
   color: white;
   padding: 1em;
+  text-align: center;
 }
 
+/* Navegación superior e inferior */
 .tabs,
 .menu-inferior {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
+  gap: 20px;
 }
 
 .tabs li a,
 .menu-inferior a {
-  margin: 0 10px;
   text-decoration: none;
   color: white;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+  background-color: #00695c;
 }
 
+.tabs li a:hover,
+.menu-inferior a:hover {
+  background-color: #ff9800;
+  color: #212121;
+}
+
+/* Secciones */
 section {
-  padding: 1em;
+  padding: 1.5em;
 }
 
+/* Inputs y botones */
 input,
 select,
 button {
   margin: 0.5em 0;
-  padding: 0.5em;
+  padding: 0.75em;
   width: 100%;
   box-sizing: border-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  font-size: 1em;
 }
 
-#splash-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #4CAF50;
+/* Botones */
+button {
+  background-color: #00695c;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  z-index: 9999;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
 }
 
+button:hover {
+  background-color: #ff9800;
+  color: #212121;
+  transform: scale(1.03);
+}
+
+/* Grillas de contenido */
 #productos,
 #listaFavoritos,
 #recomendacion {
@@ -68,20 +90,89 @@ button {
 .producto,
 .favorito,
 .recomendado {
-  border: 1px solid #ccc;
+  border: 2px solid #00695c;
   padding: 1em;
-  border-radius: 8px;
-  background: #fff;
-  transition: transform 0.2s ease-in-out;
+  border-radius: 10px;
+  background: #f9f9f9;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .producto:hover,
 .favorito:hover,
 .recomendado:hover {
   transform: scale(1.02);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 105, 92, 0.2);
 }
 
+/* Títulos */
 h2 {
-  color: #333;
+  color: #00695c;
+}
+
+/* Pie de página */
+footer {
+  background-color: #00695c;
+  color: #fff;
+  padding: 20px 10px;
+  margin-top: 50px;
+}
+
+.menu-inferior {
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.menu-inferior a:hover {
+  background-color: #ff9800;
+  color: #212121;
+  border-radius: 6px;
+  padding: 0.3em 0.6em;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1em;
+}
+
+.card-producto {
+  border: 1px solid #ccc;
+  padding: 1em;
+  border-radius: 10px;
+  background: #fff;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card-producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card-producto:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.detalle-producto img {
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.detalle-producto {
+  background: #fefefe;
+  padding: 1em;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
 }

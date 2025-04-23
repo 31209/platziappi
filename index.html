@@ -10,11 +10,13 @@
 <body>
   <!-- Splash Screen -->
   <div id="splash-screen">
-    <h1>Bienvenido a Platzi Store</h1>
+    <h1>Sobre nosotros</h1>
+    <h1></h1>
   </div>
-
+  
   <!-- Navegación principal -->
   <header>
+    <h1>PlatziFake</h1>
     <nav>
       <ul class="tabs">
         <li><a href="#home">Inicio</a></li>
@@ -22,7 +24,8 @@
         <li><a href="#favoritos">Favoritos</a></li>
         <li><a href="#buscar">Buscar</a></li>
         <li><a href="#registro">Registro</a></li>
-        <li><a href="#extra">Extra</a></li>
+        <li><a href="#sobreapi">Sobre la Api</a></li>
+        <li><a href="#lista">Lista</a></li>
       </ul>
     </nav>
   </header>
@@ -68,10 +71,36 @@
   </section>
 
   <!-- Funcionalidad Original -->
-  <section id="extra">
-    <h2>Recomendación del Día</h2>
+  <section id="sobreapi">
+    <h1>🌐 Sobre la API de PlatziFake</h1>
+    <p>La API de PlatziFake es una API REST pública diseñada para facilitar el aprendizaje y la práctica del consumo de servicios web. Simula el funcionamiento de una tienda en línea real, permitiendo acceder a datos estructurados como productos, categorías, usuarios y carritos de compras. Está inspirada en casos de uso del mundo real, lo que la hace ideal para proyectos académicos, prototipos y demostraciones.
+
+      Entre sus principales características destacan:
+      
+      🔄 Endpoints para crear, leer, actualizar y eliminar (CRUD) productos, usuarios, categorías y más.
+      
+      🛍️ Datos de ejemplo sobre productos con título, descripción, precio e imágenes.
+      
+      👤 Acceso a endpoints protegidos mediante autenticación JWT para simular inicio de sesión y control de usuarios.
+      
+      🧪 Ideal para practicar con fetch, Axios, frameworks JavaScript y pruebas de front-end.</p>
     <div id="recomendacion"></div>
   </section>
+
+    <!-- Funcionalidad LISTA -->
+<!-- Lista de productos -->
+<section id="lista">
+  <h2>Lista de productos</h2>
+  <div id="listaItems" class="grid-productos"></div>
+</section>
+
+<!-- Detalle del producto -->
+<section id="detalleProducto" style="display:none;">
+  <h2>Detalle del producto</h2>
+  <div id="detalleContenido" class="detalle-producto"></div>
+</section>
+
+  
 
   <!-- Menú Inferior -->
   <footer>
@@ -81,6 +110,7 @@
       <a href="#favoritos">Favoritos</a>
       <a href="#registro">Registro</a>
     </nav>
+    <p class="footer-copy">&copy; 2025 ApiFake. Todos los derechos reservados.<br> By: Daniela Parra</p>
   </footer>
 
   <!-- Firebase SDKs -->

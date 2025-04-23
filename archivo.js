@@ -151,3 +151,56 @@ document.getElementById('registroForm').addEventListener('submit', async (e) => 
 
 obtenerProductos();
 
+// FUNCION DE LISTA DE ELEMENTOS API
+  async function cargarLista() {
+    try {
+      const res = await fetch("https://api.escuelajs.co/api/v1/products");
+      const productos = await res.json();
+      const lista = document.getElementById("listaItems");
+
+      productos.forEach(producto => {
+        const card = document.createElement("div");
+        card.classList.add("card-producto");
+        card.innerHTML = `
+          <img src="${producto.images[0]}" alt="${producto.title}">
+          <h3>${producto.title}</h3>
+          <p><strong>${producto.price} USD</strong></p>
+        `;
+        card.addEventListener("click", () => mostrarDetalle(producto));
+        lista.appendChild(card);
+      });
+    } catch (error) {
+      console.error("Error al cargar los productos:", error);
+    }
+  }
+
+  function mostrarDetalle(producto) {
+    const detalle = document.getElementById("detalleContenido");
+    detalle.innerHTML = `
+      <img src="${producto.images[0]}" alt="${producto.title}">
+      <h3>${producto.title}</h3>
+      <p><strong>Precio:</strong> ${producto.price} USD</p>
+      <p>${producto.description}</p>
+      <button onclick="cerrarDetalle()">Cerrar</button>
+    `;
+    document.getElementById("detalleProducto").style.display = "block";
+    window.scrollTo({ top: document.getElementById("detalleProducto").offsetTop, behavior: "smooth" });
+  }
+
+  function cerrarDetalle() {
+    document.getElementById("detalleProducto").style.display = "none";
+  }
+
+  window.addEventListener("DOMContentLoaded", cargarLista);
+
+//(scroll animado)
+  document.querySelectorAll('a[href^="#"]').forEach(ancla => {
+    ancla.addEventListener('click', function (e) {
+      e.preventDefault();
+      const destino = document.querySelector(this.getAttribute("href"));
+      destino.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+
+
